@@ -12,7 +12,7 @@ export default async function collectMetrics(statusUrl, metricsToCollect) {
             timeout: 1000,
         });
         const response       = await instance.get(`${statusUrl}?json`);
-        const parsedResponse = JSON.parse(response.data);
+        const parsedResponse = response.data;
 
         return {
             metrics: metricsToCollect.map(
